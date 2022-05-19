@@ -1,0 +1,9 @@
+  <div class="main" style="height 200px; width: 300px;">
+    {% for mp in myposts %}
+    {{ mp.title }}<br/>
+    {{ mp.description }}<br/>
+    {{ mp.user }}
+    <p><a href="{% url 'detail_view' pk=mp.id %} "> View </a> </p>
+    <hr/>
+    {% endfor %}
+   </div>

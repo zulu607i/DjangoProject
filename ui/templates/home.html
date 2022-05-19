@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+{% block content %}
+{% if user.is_authenticated %}
+ <h2>Welcome {{ user.username }}  </h2>
+ <h2>Please create your post here <a href="{% url 'post_create_view' %}">Create Post </a>  </h2>
+<h2> Check out all the posts<a href="{% url 'list_view' %}"> here</a>.</h2>
+<h2> Check out your  posts<a href="{% url 'my_posts_view' %}"> here</a>.</h2>
+
+
+ <span><a href="{% url 'logout' %}">Logout </a> </span>
+ <br>
+
+
+ {% else %}
+<h2> Welcome. Register <a href="{% url 'register' %}">here</a> or if you already have an account login<a href="{% url 'login' %}"> here. </a></h2>
+{% endif %}
+
+{% endblock %}
+
+</body>
+</html>

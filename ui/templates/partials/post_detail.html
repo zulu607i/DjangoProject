@@ -1,0 +1,8 @@
+{{ post.title }}
+{{ post.description }}
+{{ post.user }}
+{{ post.id}}
+<p><a href="{% url 'post_update' pk=post.id %} "> Update </a> </p>
+{% if post.user == request.user %}
+<p><a href="{% url 'post_delete' pk=post.id %} "> Delete </a> </p>
+{% endif %}
