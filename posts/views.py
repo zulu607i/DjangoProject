@@ -8,6 +8,13 @@ from .forms import PostCreate
 from .models import Post
 # Create your views here.
 
+def home(request):
+    context_all_posts = Post.objects.order_by('-created_at')
+    return render(request, 'home.html',
+                  {'all_posts': context_all_posts},
+
+                  )
+
 
 def post_create_view(request):
     form = PostCreate(request.POST)
@@ -22,7 +29,7 @@ def post_create_view(request):
 
 class AllPostsListView(ListView):
     model = Post
-    context_object_name = 'allposts'
+    context_object_name = 'all_posts'
     template_name = 'partials/list_row.html'
 
     def get_queryset(self):
