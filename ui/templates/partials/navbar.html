@@ -17,15 +17,14 @@
 							</li>
 							<li class="nav-item dropdown dropdown-slide">
 								<a class="nav-link dropdown-toggle" data-toggle="dropdown" href="">Dashboard<span><i class="fa fa-angle-down"></i></span>
-								</a>
+							</a>
 
 								<!-- Dropdown list -->
 								<div class="dropdown-menu">
-									<a class="dropdown-item" href="dashboard.html">Dashboard</a>
-									<a class="dropdown-item" href="dashboard-my-ads.html">Dashboard My Ads</a>
-									<a class="dropdown-item" href="dashboard-favourite-ads.html">Dashboard Favourite Ads</a>
-									<a class="dropdown-item" href="dashboard-archived-ads.html">Dashboard Archived Ads</a>
-									<a class="dropdown-item" href="dashboard-pending-ads.html">Dashboard Pending Ads</a>
+									<a class="dropdown-item" href="#">Dashboard</a>
+									<a class="dropdown-item" href="{% url 'my_posts_view'%}">Dashboard My Ads</a>
+									<a class="dropdown-item" href="#">Dashboard My Products</a>
+									<a class="dropdown-item" href="{% url 'list_view'%}">Dashboard All Ads</a>
 								</div>
 							</li>
 							<li class="nav-item dropdown dropdown-slide">
@@ -70,9 +69,7 @@
 							</li>
 							{% else %}
 							<a class="nav-link login-button" href="{% url 'login' %}">Login</a>
-							<li class="nav-item">
-								<a class="nav-link text-white add-button" href="{% url 'post_create_view' %}"><i class="fa fa-plus-circle"></i> Add Listing</a>
-							</li>
+							<a class="nav-link text-white add-button" href="{% url 'register' %}">Register Now</a>
 							{% endif %}
 						</ul>
 					</div>
